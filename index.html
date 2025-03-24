@@ -758,6 +758,20 @@
           window.open(whatsappLink, '_blank');
         });
       });
+       // הוספת אנימציה פשוטה (Fade-in) לאלמנטים בעמוד
+      // (אפשר להוסיף קלאס fade-in לכל אלמנט שרוצים שיופיע באנימציה)
+      window.addEventListener('load', function() {
+        var fadeElements = document.querySelectorAll('.fade-in');
+         for (var i = 0; i < fadeElements.length; i++) {
+            var element = fadeElements[i];
+            var elementTop = element.getBoundingClientRect().top;
+            var windowHeight = window.innerHeight;
+
+            if (elementTop < windowHeight) {
+              element.classList.add('fade-in');
+            }
+        }
+     });
     </script>
 </body>
 </html>
